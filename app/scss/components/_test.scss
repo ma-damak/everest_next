@@ -1,0 +1,28 @@
+.test {
+  display: grid;
+  position: relative;
+  //   grid-template-columns:
+  //     minmax(16px, 1fr)
+  //     minmax(0, 625px)
+  //     minmax(0, 625px)
+  //     minmax(16px, 1fr);
+  grid-template-columns:
+    minmax(16px, 1fr)
+    minmax(0, 366px)
+    minmax(0, 884px)
+    minmax(16px, 1fr);
+  &__image {
+    grid-column: 2 /3;
+    margin-block: -96px -36px;
+  }
+  &__content {
+    background-color: red;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: inherit;
+      grid-column: 1 / 2;
+    }
+  }
+}

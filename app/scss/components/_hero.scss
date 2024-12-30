@@ -1,0 +1,37 @@
+@use '../util/' as u;
+
+.hero {
+  display: grid;
+  row-gap: 22px;
+  padding-block: 26px 14px;
+  // 14 hna w 14 fili taht
+  @include u.breakpoint(medium) {
+    // display: flex;
+    // column-gap: 55px;
+    // justify-content: space-between;
+    // align-items: center;
+    column-gap: 20px;
+    grid-template-columns: 3fr 2fr;
+    padding-block: 73px 36px; // 36 w 35 ghad
+  }
+
+  &__description {
+    @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(12), u.rem(20));
+    letter-spacing: 0.02em;
+    line-height: 1.5;
+    max-width: 44ch;
+    margin-block: 20px 13px;
+    @include u.breakpoint(medium) {
+      margin-block: 75px 40px;
+    }
+  }
+  &__links {
+    display: grid;
+    row-gap: 11px;
+    @include u.breakpoint(medium) {
+      display: flex;
+      align-items: flex-end;
+      column-gap: 12px;
+    }
+  }
+}

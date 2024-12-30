@@ -1,0 +1,29 @@
+@use '../util/' as u;
+
+.about {
+  padding-block: 14px;
+  // 14 hna w 14 fili taht
+  @include u.breakpoint(medium) {
+    padding-block: 35px 70px; // 70 w 70 ghad
+  }
+  &__list {
+    display: grid;
+    row-gap: 19px;
+  }
+  &__heading {
+    margin-block-end: 22px;
+    @include u.breakpoint(medium) {
+      margin-block-end: 36px;
+    }
+  }
+  &__subheading {
+    max-width: 14ch;
+    line-height: 1.26;
+  }
+  &__description {
+    color: var(--c-light);
+    font-size: u.rem(16);
+    max-width: 40ch;
+    margin-block-start: 19px;
+  }
+}

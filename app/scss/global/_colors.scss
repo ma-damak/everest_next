@@ -1,0 +1,20 @@
+:root {
+  --color-dark: hsl(225, 10%, 8%);
+  --color-white: hsl(0, 0%, 100%);
+  --c-black: #000000;
+  --c-gray: #202227;
+  --c-grey: #555557;
+  --c-light: #a3a3a5;
+  --c-white: #ffffff;
+  --c-orange: #fb5b31;
+  --gradient-primary: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  --gradient-secondary: linear-gradient(
+    180deg,
+    rgba(84, 88, 99, 0) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}

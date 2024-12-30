@@ -1,0 +1,79 @@
+@use '../util/' as u;
+
+.courses {
+  padding-block: 14px;
+  // 14 hna w 14 fili taht
+  @include u.breakpoint(medium) {
+    padding-block: 70px 39px; // 70 w 70 ghad
+  }
+  &__header {
+    display: grid;
+    row-gap: 22px;
+    margin-block-end: 22px;
+    @include u.breakpoint(medium) {
+      display: flex;
+      justify-content: space-between;
+      margin-block-end: 87px;
+    }
+  }
+  &__filter {
+    @include u.breakpoint(medium) {
+      align-self: flex-end;
+    }
+  }
+  &__heading {
+    max-width: 12ch;
+  }
+  &__label {
+    color: var(--c-light);
+    line-height: 1.5;
+    margin-block-end: 14px;
+  }
+  &__buttons {
+    display: flex;
+    gap: 11px;
+    flex-wrap: wrap;
+  }
+  // end heading
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 289px);
+    // grid-template-columns: repeat(auto-fit, minmax(289px, 1fr));
+    justify-content: center;
+    gap: 26px;
+  }
+  &__item {
+    display: grid;
+    grid-template-rows: 391px;
+    border-radius: 33px;
+    overflow: hidden;
+    & > * {
+      grid-column: 1;
+      grid-row: 1;
+      // grid-row: 1;
+    }
+  }
+  &__name {
+    max-width: 148px;
+  }
+  &__description {
+    font-size: u.rem(15);
+    line-height: 1.5;
+    max-width: 23ch;
+    // margin-bottom: 17.5px;
+  }
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+  &__content {
+    position: relative;
+    display: grid;
+    align-content: end;
+    padding: 20px;
+  }
+  &__link {
+    justify-self: end;
+    margin-block-start: 17.5px;
+  }
+}

@@ -1,0 +1,18 @@
+.rounded {
+  border-radius: 33px;
+}
+.gradient--text {
+  background-image: var(--gradient-primary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.gradient--image {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gradient-secondary);
+  }
+}

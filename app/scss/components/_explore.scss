@@ -1,0 +1,41 @@
+@use '../util/' as u;
+
+.explore {
+  padding-block: 14px;
+  // 14 hna w 14 fili taht
+  @include u.breakpoint(medium) {
+    padding-block: 39px 42px; // 70 w 70 ghad
+  }
+  &__header {
+    margin-block-end: 21px;
+    display: grid;
+    row-gap: 13px;
+    @include u.breakpoint(medium) {
+      margin-block-end: 78px;
+      display: flex;
+      justify-content: space-between;
+      column-gap: 20px;
+    }
+  }
+  &__heading {
+    max-width: 16ch;
+  }
+  &__links {
+    display: grid;
+    row-gap: 11px;
+    @include u.breakpoint(medium) {
+      display: flex;
+      align-items: flex-end;
+      column-gap: 12px;
+    }
+  }
+  &__image {
+    max-height: 193px;
+    @include u.breakpoint(large) {
+      max-height: 464px;
+    }
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}

@@ -1,0 +1,140 @@
+@use '../util/' as u;
+
+.coaches {
+  padding-block: 14px;
+  // 14 hna w 14 fili taht
+  @include u.breakpoint(large) {
+    padding-block: 41px; // 70 w 70 ghad
+  }
+  &__heading {
+    margin-block-end: 24px; // zid thabet
+    // margin-inline: 16px;
+    @include u.breakpoint(large) {
+      margin-block-end: 165px;
+    }
+  }
+  &__container {
+    @include u.breakpoint(large) {
+      display: grid;
+      position: relative;
+      grid-template-columns:
+        minmax(16px, 1fr)
+        minmax(0, 366px)
+        minmax(0, 884px)
+        minmax(16px, 1fr);
+    }
+  }
+  &__main {
+    @include u.breakpoint(large) {
+      background-color: var(--c-gray);
+      border-radius: 0 33px 33px 0;
+      overflow: hidden;
+      &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-color: inherit;
+        grid-column: 1 / 2;
+      }
+    }
+  }
+  &__image-container {
+    display: none;
+    @include u.breakpoint(large) {
+      grid-column: 2 /3;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      margin-block: -96px -36px;
+      border-radius: 33px;
+      overflow: hidden;
+      & > * {
+        grid-column: 1;
+        grid-row: 1;
+      }
+    }
+  }
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+  &__tags {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-content: flex-end;
+    padding: 0 22px 24px;
+  }
+  &__buttons {
+    display: flex;
+    gap: 6px;
+    margin-inline-start: 16px;
+    // margin-block: 22px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @include u.breakpoint(large) {
+      position: absolute;
+      transform: translateY(-50%);
+      margin-inline-start: 85px;
+    }
+  }
+  &__button {
+    display: inline-flex;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    width: 71px;
+    height: 71px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--c-light);
+    outline: 0;
+    transition: border-color 0.3s ease;
+    &:where(:hover, :focus) {
+      border-color: var(--c-orange);
+    }
+    @include u.breakpoint(large) {
+      width: 104px;
+      height: 104px;
+    }
+  }
+  // start content
+  &__content {
+    background-color: var(--c-gray);
+    padding: 30px 26px 27px;
+    border-radius: 24px;
+    margin-inline: 16px;
+    margin-block-start: 22px;
+    @include u.breakpoint(large) {
+      margin: 0;
+      border-radius: 0;
+      padding: 73px 42px 59px 85px;
+    }
+  }
+  &__name {
+    // font-size: u.rem(32);
+    @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(32), u.rem(96));
+  }
+  &__description {
+    @include u.fs-fluid(u.rem(375), u.rem(1200), u.rem(12), u.rem(20));
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    margin-block: 20px 29px;
+    max-width: 34ch;
+    @include u.breakpoint(large) {
+      margin-block: 36px 42px;
+      max-width: 48ch;
+    }
+  }
+  &__links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
